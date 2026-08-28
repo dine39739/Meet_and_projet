@@ -8,7 +8,7 @@ Génère des comptes-rendus et extrait des tâches depuis les transcriptions.
 import re
 import json
 from typing import Tuple, Optional, List, Dict, Any
-from mistralai import Mistral
+from mistralai.client import Mistral
 
 
 class MistralClient:
@@ -64,7 +64,7 @@ Assure-toi que le JSON soit valide et parseable."""
         """
         self.api_key = api_key
         self.model = model
-        self.client = Mistral(api_key=api_key) if api_key else None
+        self.client = MistralClient(api_key=api_key) if api_key else None
         
     def generate_compte_rendu(self, transcript: str, ordre_du_jour: str = "") -> Tuple[str, List[Dict[str, str]]]:
         """

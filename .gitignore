@@ -8,8 +8,6 @@ __pycache__/
 env/
 venv/
 .venv/
-.ENV
-.venv.bak/
 pip-log.txt
 pip-delete-this-directory.txt
 .tox/
@@ -20,31 +18,38 @@ nosetests.xml
 coverage.xml
 *.cover
 *.log
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules/
+
+# Local configuration files (may contain secrets)
+.env
+.env.local
+.env.dev
+.env.prod
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build and distribution artifacts
+dist/
+build/
+*.egg-info/
+.target/
+target/
+
+# Testing
 .pytest_cache/
 .mypy_cache/
-
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# Executables
-*.exe
-*.dll
-*.so
+htmlcov/
+.coverage*
 
 # OS generated files
 .DS_Store
@@ -54,25 +59,4 @@ wheels/
 .Trashes
 ehthumbs.db
 Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-
-# Environment
-.env
-.env.local
-*.env
-
-# Build artifacts
-*.spec
-*.iss
-
-# Logs
-*.log
-
-# Temporary files
-*.tmp
-*.temp
-```node_modules/
-.next/
+```
