@@ -309,6 +309,16 @@ class DatabaseManager:
         finally:
             self.disconnect()
             
+    def get_projet_by_id(self, projet_id: int) -> Optional[Dict[str, Any]]:
+        """Récupère un projet par son ID."""
+        self.connect()
+        try:
+            self.cursor.execute("SELECT * FROM projets WHERE id = ?", (projet_id,))
+            row = self.cursor.fetchone()
+            return dict(row) if row else None
+        finally:
+            self.disconnect()
+            
     def get_stats(self) -> Dict[str, Any]:
         """Récupère des statistiques générales."""
         self.connect()
